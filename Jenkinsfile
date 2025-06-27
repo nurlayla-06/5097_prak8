@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/nurlayla-06/5097_prak8.git'
+                git url: 'https://github.com/nurlayla-06/5097_prak8.git', branch: 'main'
             }
         }
 
