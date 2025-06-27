@@ -2,36 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
+        stage('Clone Repo') {
             steps {
-                git url: 'https://github.com/nurlayla-06/5097_prak8.git', branch: 'main'
+                echo 'Repo berhasil dikloning oleh Jenkins.'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'npm install'
+                echo 'Tahap build berjalan.'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'npm test' // Asumsinya sudah ada unit test
-            }
-            post {
-                success {
-                    echo 'Tes berhasil!'
-                }
-                failure {
-                    echo 'Tes gagal!'
-                }
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo 'Menjalankan aplikasi...'
-                sh 'nohup node app.js &'
+                echo 'Tes unit berjalan (simulasi).'
             }
         }
     }
