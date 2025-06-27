@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clone Repo') {
             steps {
-                echo 'Repo berhasil dikloning oleh Jenkins.'
+                git url: 'https://github.com/nurlayla-06/5097_prak8.git', branch: 'main'
             }
         }
 
